@@ -16,11 +16,11 @@
 # You should have received a copy of the GNU General Public License
 # along with LibFminer.  If not, see <http://www.gnu.org/licenses/>.
 
-INCLUDE_OB  =  -I/usr/local/include/openbabel-2.0  
+INCLUDE_OB  =  -I/usr/include/openbabel-2.0  
 INCLUDE_GSL  =   
-LDFLAGS_OB  =  -L/usr/local/lib  
+LDFLAGS_OB  =   
 LDFLAGS_GSL  =   
-INCLUDE_RB  =  1.9.1p243 NOT FOUND
+INCLUDE_RB  = -I/usr/lib/ruby/1.8/i486-linux
 
 # ADJUST COMPILER PATH TO OPENBABEL INCLUDE FILES (1st line Linux, 2nd line Windows):
 #INCLUDE_OB    = -I/usr/local/include/openbabel-2.0
@@ -51,7 +51,7 @@ NAME          = fminer
 CC            = g++
 INCLUDE       = $(INCLUDE_OB) $(INCLUDE_GSL) 
 LDFLAGS       = $(LDFLAGS_OB) $(LDFLAGS_GSL)
-OBJ           = closeleg.o constraints.o database.o graphstate.o legoccurrence.o path.o patterntree.o fminer.o
+OBJ           = closeleg.o constraints.o database.o graphstate.o legoccurrence.o path.o patterntree.o bbrc.o
 SWIG          = swig
 SWIGFLAGS     = -c++
 ifeq ($(OS), Windows_NT) # assume MinGW/Windows
